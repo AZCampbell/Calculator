@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1px;
+}
+.answer {
+    grid-area: answer;
+    background-color: black;
+    color: white;
+    height: 100px;
+    text-align: right;
+    font-size: 36px;
+    
+}
+.answer:hover {
+    opacity: 1;
+}
+.button-c {
+    grid-area: button-c;
+}
+.button-arrow {
+    grid-area: button-arrow;
+}
+.button-divide {
+    grid-area: button-divide;
+}
+.button-7 {
+    grid-area: button-7;
+}
+.button-8 {
+    grid-area: button-8;
+}
+
+.button-0 {
+    grid-area: button-0;
+}
+.reg {
+    height: 100px;
+    background-color: #d8d9db;
+}
+.colored {
+    height: 100px;
+    background-color: #df974c;
+    color:white;
+}
+.calculator {
+    padding-top: 200px;
+    max-width: 400px;
+    font-size: 36px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: .5;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "answer answer answer answer"
+                         "button-c button-c button-arrow button-divide"
+                         "button-7 button-8 button-9 button-multiply"
+                         "button-4 button-5 button-6 button-minus"
+                         "button-1 button-2 button-3 button-plus"
+                         "button-0 button-0 button-0 button-equals";
+}
+button {
+    font-size: 24px;
+    font-family: monospace;
+}
+button:hover {
+    opacity: .6;
+}
