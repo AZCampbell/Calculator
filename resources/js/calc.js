@@ -31,19 +31,19 @@ Array.from(operators).forEach(o => {
         return newValue;
     })
 })
-function getResult () {
+function setResult () {
     if (firstInt != '0' && secondInt != '0') {
-        finalAnswer = parseInt(firstInt) + parseInt(secondInt);
+       finalAnswer = getResult()
         document.getElementsByClassName("answer")[0].innerHTML = finalAnswer;
     } else if (secondInt === '0') {
         secondInt = document.getElementsByClassName("answer")[0].innerHTML;
-        finalAnswer = parseInt(firstInt) + parseInt(secondInt);
+        finalAnswer = getResult();
         document.getElementsByClassName("answer")[0].innerHTML = finalAnswer;
     } else {
         document.getElementsByClassName("answer")[0].innerHTML = firstInt;
     }
 }
-document.getElementsByClassName('eq')[0].addEventListener("click", getResult);
+document.getElementsByClassName('eq')[0].addEventListener("click", setResult);
 
 function clearAll() {
     
@@ -53,3 +53,21 @@ function clearAll() {
     document.getElementsByClassName("answer")[0].innerHTML = '0';
 }
 document.getElementsByClassName('clear')[0].addEventListener("click", clearAll);
+
+function getResult() {
+    switch(operator) {
+        case '+':
+         return parseInt(firstInt) + parseInt(secondInt);
+         break;
+         case '-':
+            return parseInt(firstInt) - parseInt(secondInt);
+            break;
+        case '*':
+            return parseInt(firstInt) * parseInt(secondInt);
+            break;
+        case '/':
+            return parseInt(firstInt) / parseInt(secondInt);
+            break;
+        
+    }
+}
